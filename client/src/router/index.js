@@ -1,10 +1,10 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import Statistics from '@/components/controllers/Statistics';
-import Results from '@/components/controllers/Results';
-import Patterns from '@/components/controllers/Patterns';
+import Vue from 'vue'
+import Router from 'vue-router'
+import Statistics from '@/components/controllers/Statistics'
+import Results from '@/components/controllers/Results'
+import Patterns from '@/components/controllers/Patterns'
 
-Vue.use(Router);
+Vue.use(Router)
 
 export default new Router({
   routes: [
@@ -24,4 +24,4 @@ export default new Router({
       component: Patterns,
     },
   ],
-});
+})

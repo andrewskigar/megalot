@@ -25,6 +25,7 @@ module.exports = {
   },
   // add your custom rules here
   rules: {
+    'semi': [2, 'never'],
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       js: 'never',

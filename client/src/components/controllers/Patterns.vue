@@ -23,30 +23,28 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from 'axios'
 
 export default {
   name: 'Patterns',
   data() {
     return {
       results: [],
-    };
+    }
   },
   created() {
-    this.fetch();
+    this.fetch()
   },
   methods: {
-    fetch(factor) {
-      if (!factor) {
-        factor = 1;
-      }
+    fetch(param) {
+      const factor = !param ? 1 : param
 
       axios.get(`http://localhost:9000/patterns?factor=${factor}`).then((response) => {
-        this.results = response.data;
-      });
+        this.results = response.data
+      })
     },
   },
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

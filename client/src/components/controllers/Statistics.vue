@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import ChartLongAgo from '../charts/ChartLongAgo';
+import ChartLongAgo from '../charts/ChartLongAgo'
 
 export default {
   name: 'Statistics',
@@ -13,9 +13,9 @@ export default {
   data() {
     return {
 
-    };
+    }
   },
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

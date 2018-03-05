@@ -12,26 +12,26 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from 'axios'
 
 export default {
   name: 'Results',
   data() {
     return {
       results: [],
-    };
+    }
   },
   created() {
-    this.fetch();
+    this.fetch()
   },
   methods: {
     fetch() {
       axios.get('http://localhost:9000/results').then((response) => {
-        this.results = response.data;
-      });
+        this.results = response.data
+      })
     },
   },
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
