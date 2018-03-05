@@ -1,25 +1,23 @@
-const fs = require('fs');
-const config = require('../config');
+const fs = require('fs')
+const config = require('../config')
 
 module.exports = {
   async results(req, res) {
     fs.readFile(config.MEGALOT_RESULTS, (err, data) => {
-      if (err) throw err;
+      if (err) throw err
 
-      let results = JSON.parse(data);
-      let sortedResults = [];
+      const results = JSON.parse(data)
+      const sortedResults = []
 
       results.forEach((tirag) => {
-        let numbers = tirag.slice(0, 6);
-        numbers.sort(function (a, b) {
-          return a - b;
-        });
+        const numbers = tirag.slice(0, 6)
+        numbers.sort((a, b) => a - b)
 
-        numbers.push(tirag[6]);
-        sortedResults.push(numbers);
-      });
+        numbers.push(tirag[6])
+        sortedResults.push(numbers)
+      })
 
-      res.send(sortedResults);
-    });
+      res.send(sortedResults)
+    })
   },
 }
