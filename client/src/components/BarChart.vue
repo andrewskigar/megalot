@@ -52,7 +52,12 @@ export default {
 
   watch: {
     chartData() {
-      this.refresh()
+      // update chartjs object [labels, datasets]
+      /* eslint-disable no-underscore-dangle */
+      this.$data._chart.data.labels = this.chartLabels
+      this.$data._chart.data.datasets[0].data = this.chartData
+
+      this.$data._chart.update()
     },
   },
 
@@ -63,7 +68,7 @@ export default {
           labels: this.chartLabels,
           datasets: [
             {
-              label: 'Тираж',
+              label: '',
               backgroundColor: '#6cb2eb',
               borderColor: '#6cb2eb',
               data: this.chartData,

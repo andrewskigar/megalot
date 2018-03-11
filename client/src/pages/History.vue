@@ -10,7 +10,7 @@
         </b>
       </p>
     </div>
-    <div v-else class="loader">&nbsp;</div>
+    <div v-else class="loader"></div>
   </div>
 </template>
 
