@@ -1,39 +1,21 @@
 <template>
-  <div id="app">
-    <header class="bg-purple-dark">
-      <ul class="list-reset flex items-baseline">
-        <li class="text-white p-4 text-2xl">
-          Megalot Stats
-        </li>
-        <li class="p-4">
-          <router-link class="text-grey hover:text-white no-underline"
-            to="/results">Результаты
-          </router-link>
-        </li>
-        <li class="p-4">
-          <router-link class="text-grey hover:text-white no-underline"
-            to="/stats">Статистика
-          </router-link>
-        </li>
-        <li class="p-4">
-          <router-link class="text-grey hover:text-white no-underline"
-            to="/patterns">Шаблоны
-          </router-link>
-        </li>
-      </ul>
-    </header>
-    <router-view/>
+  <div id="app" class="flex flex-col min-h-full">
+    <app-header></app-header>
+    <router-view></router-view>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
+import AppHeader from '@/components/AppHeader'
+import AppFooter from '@/components/AppFooter'
+
 export default {
+  components: { AppHeader, AppFooter },
   name: 'App',
 }
 </script>
 
-<style>
-.router-link-active {
-  color: white;
-}
+<style scoped>
+
 </style>

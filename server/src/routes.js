@@ -12,7 +12,7 @@ module.exports = (app) => {
     PatternsController.results,
   )
   app.get(
-    '/results',
+    '/history',
     ResultsController.results,
   )
 }

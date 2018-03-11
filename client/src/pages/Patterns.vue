@@ -1,16 +1,20 @@
 <template>
-  <div class="w-full px-4 pb-8">
-    <div class="flex my-4">
-      <button @click="fetch(1)"
-        class="bg-purple-dark hover:bg-purple-darker text-white font-bold py-2 px-4 mr-2 rounded">
+  <div class="w-full p-4 flex-1">
+    <div class="mb-4 inline-flex">
+      <button @click="pattern = 1"
+        :class="[pattern === 1 ? 'bg-grey' : 'bg-grey-light']"
+        class="hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded-l appearance-none"
+      >
         Через тираж
       </button>
-      <button @click="fetch(2)"
-        class="bg-purple-dark hover:bg-purple-darker text-white font-bold py-2 px-4 rounded">
+      <button @click="pattern = 2"
+        :class="[pattern === 2 ? 'bg-grey' : 'bg-grey-light']"
+        class="hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded-r appearance-none"
+      >
         Через два тиража
       </button>
     </div>
-    <p v-for="(tirag, index) in results" :key="index" class="flex mt-4">
+    <p v-for="(tirag, index) in results" :key="index" class="flex mb-4">
       <b v-for="(bead, _index) in tirag"
         :key="_index"
         class="p-2 mr-2 border border-grey-light font-normal"
@@ -29,11 +33,17 @@ export default {
   name: 'Patterns',
   data() {
     return {
+      pattern: 1,
       results: [],
     }
   },
   created() {
     this.fetch()
+  },
+  watch: {
+    pattern() {
+      this.fetch(this.pattern)
+    },
   },
   methods: {
     fetch(param) {

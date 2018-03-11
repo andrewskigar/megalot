@@ -1,22 +1,22 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Statistics from '@/components/controllers/Statistics'
-import Results from '@/components/controllers/Results'
-import Patterns from '@/components/controllers/Patterns'
+import Charts from '@/pages/Charts'
+import History from '@/pages/History'
+import Patterns from '@/pages/Patterns'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/results',
-      name: 'Results',
-      component: Results,
+      path: '/history',
+      name: 'History',
+      component: History,
     },
     {
-      path: '/stats',
-      name: 'Statistics',
-      component: Statistics,
+      path: '/charts',
+      name: 'Charts',
+      component: Charts,
     },
     {
       path: '/patterns',
